@@ -1,0 +1,16 @@
+Match on 2014-02-02 22:58:24 ID: 497673678
+Game Mode: All Pick
+Duration: 0:22:22
+First Blood at 0:2:49
+-----------------------------------
+	I played Shadow Demon
+	Level 14 with K-D-A: 5-4-8
+	Creep Score: 69-0
+	GPM: 453	XPM: 480
+	Ending Gold: 92
+	Hero Damage: 5806
+	Damage per min: 263
+	Tower Damage: 1235
+	Healing Done: 0
+	Team: Radiant
+	Victor: Radiant

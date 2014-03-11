@@ -1,0 +1,15 @@
+Match on 2014-02-03 10:31:43 ID: 498471442
+Game Mode: All Pick
+Duration: 0:41:14
+First Blood at 0:4:10
+-----------------------------------
+	I played Lina
+	Level 23 with K-D-A: 12-1-4
+	Creep Score: 137-10
+	GPM: 478	XPM: 720
+	Ending Gold: 4135
+	Hero Damage: 11501
+	Tower Damage: 1869
+	Healing Done: 2991
+	Team: Dire
+	Victor: Dire
