@@ -55,6 +55,18 @@ def makeResourceMatchQuery(keyFile, matchIDArr)
   return resourceArr
 end
 
+def requestOtherPlayerInfo(keyFile, playerName)
+  path = File.expand_path(File.dirname(__FILE__)) + "/text_files/"
+  resource = "https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?format=XML&matches_requested=5&key="
+  open(path + keyFile, "r") { |f|
+    f.each_line { |line|
+      resource += line 
+    }
+  }
+  resource += "&player_name=" + playerName
+  return resource
+end
+
 def createMatchFiles(matchQueryArr)
   matchQueryArr.each do |res|
     uri = URI.parse(res)
@@ -69,5 +81,19 @@ def createMatchFiles(matchQueryArr)
   end
 end
 
-def processMatchDetails(matchQueryArr, array)
+def createOtherMatchFiles(matchQueryArr, playerName)
+  if !File.exist?(File.join(File.expand_path(File.dirname(__FILE__)), playerName)) then
+    Dir.mkdir("matches/" + playerName)
+  end
+  matchQueryArr.each do |res|
+    uri = URI.parse(res)
+    parseHash = XmlSimple.xml_in(uri, { 'KeyAttr' => 'name' })
+    open("matches/" + playerName + "/" + parseHash['match_id'][0] + '.xml' , 'w') { |file|
+      uri.open { |f| 
+        f.each_line { |line|
+          file.write(line)
+        }
+      }
+    }
+  end
 end
